@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, Redirect } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
