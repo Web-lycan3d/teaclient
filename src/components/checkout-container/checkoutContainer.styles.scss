@@ -1,0 +1,207 @@
+/** @format */
+
+.checkout-page {
+  width: 55%;
+  height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto 0;
+  position: relative;
+
+  .cart-items-page {
+    width: 100%;
+    height: 55vh;
+    padding-right: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: #888 #f1f1f1;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgb(240, 122, 122);
+    }
+  }
+  .checkout-header {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgrey;
+
+    .header-block {
+      text-transform: capitalize;
+      width: 23%;
+      text-align: center;
+
+      &:last-child {
+        width: 8%;
+      }
+    }
+  }
+
+  .total {
+    margin-top: 30px;
+    margin-left: auto;
+    font-family: "Poppins", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    span {
+      display: flex;
+    }
+  }
+  .inclusive {
+    margin-top: 30px;
+    margin-left: auto;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #e54b35;
+    p {
+      display: flex;
+      border-bottom: 0.5px solid #e54b35;
+      padding: 4% 0%;
+    }
+    span {
+      display: flex;
+      padding-top: 2%;
+      opacity: 0.8;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+  }
+}
+.checkout-redirect {
+  margin-left: auto;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  button {
+    font-family: "Poppins", sans-serif;
+    border: 0;
+    margin-top: 0.8rem;
+    background: transparent;
+    color: black;
+    width: 11rem;
+    height: 2.25rem;
+    padding: 0.4rem 0;
+    border: 2px solid rgba(0, 0, 0, 0.397);
+    cursor: pointer;
+    position: relative;
+    &::before {
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      content: "";
+      width: 0;
+      height: 100%;
+      z-index: -1;
+      transform-origin: bottom;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      background-color: rgb(236, 84, 61);
+    }
+    &:hover::before {
+      width: 100%;
+      transform-origin: bottom;
+    }
+    &:hover {
+      color: white;
+      border: 2px solid rgba(0, 0, 0, 0.658);
+    }
+  }
+}
+.empty-cart {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  span {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+  button {
+    width: 7rem;
+    padding: 0.2rem 0.6rem;
+    border: 2px solid lightcoral;
+    background: transparent;
+    outline: 0;
+    transition: all 0.35s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      letter-spacing: 0.8px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .checkout-page {
+    width: 95%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    position: relative;
+    .inclusive {
+      width: 100%;
+      p {
+        font-size: 1.2rem;
+        padding: 2% 0;
+      }
+    }
+  }
+
+  .checkout-page .checkout-header .header-block {
+    text-transform: capitalize;
+    width: 18%;
+    text-align: center;
+    font-size: 12px;
+  }
+  .header-block:nth-child(3) {
+    margin-left: 0.8rem;
+  }
+  .checkout-page .checkout-header .header-block:last-child {
+    width: 14%;
+  }
+  .checkout-page .cart-items-page {
+    width: 100%;
+    height: 35vh;
+    padding-right: 0rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: #888 #f1f1f1;
+    scrollbar-width: thin;
+  }
+  .checkout-item {
+    font-size: 12px;
+    left: 0.3rem;
+  }
+  .checkout-page .total {
+    width: 100%;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .checkout-redirect {
+    margin-top: 0.2rem;
+    width: 100%;
+    button {
+      margin-top: 0.2rem;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+/** @format */
+
+.products {
+  margin: 10rem 0;
+}
+.product-text-lava {
+  width: 85%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem auto 0.5rem;
+  h3,
+  p {
+    font-family: "Parisienne", cursive;
+  }
+  h3 {
+    font-size: 3.7rem;
+    color: #6bb225;
+  }
+  p {
+    font-weight: 200;
+    letter-spacing: 1.1px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    color: #aec79d;
+    position: relative;
+    left: 2rem;
+  }
+}
+.product-text-teaware {
+  width: 90%;
+  margin: 0 auto;
+  .teaware-header {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    color: #aec79d;
+  }
+}
+.products-teaware {
+  width: 80%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+  margin: 2rem auto 8rem;
+  .product-1-box {
+    margin: 3rem 0.2rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .products-teaware {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .products-teaware {
+    width: 100%;
+  }
+  .products {
+    margin: 0rem 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .products-teaware {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 720px) {
+  .products {
+    margin: 0rem auto;
+  }
+  .products-teaware {
+    margin-bottom: 2rem;
+    .product-1-box {
+      height: 240px;
+      width: 220px;
+      margin: 2rem 0.8rem;
+    }
+  }
+  .product-text-teaware {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0% 2%;
+    .teaware-header {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 720px) {
+  .products-teaware {
+    .product-1-box {
+      height: 240px;
+      width: 80%;
+      margin: 2.5rem 0.8rem;
+    }
+  }
+}

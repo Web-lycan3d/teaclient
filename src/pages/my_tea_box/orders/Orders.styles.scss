@@ -1,0 +1,79 @@
+/** @format */
+
+.cart-body {
+  width: 75%;
+  min-height: 70vh;
+
+  padding-bottom: 1rem;
+  margin: 0 auto;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgb(185, 185, 185);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(231, 93, 73);
+  }
+  .cancel-order {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 15px;
+    padding-top: 10%;
+  }
+}
+
+.no-orders {
+  margin-top: 3rem;
+  text-align: center;
+  p {
+    font-weight: 500;
+    margin-top: 2rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.28rem;
+  }
+  button {
+    margin-top: 0.5rem;
+    width: 7rem;
+    padding: 0.25rem 0.8rem;
+    border: 2px solid rgba(0, 0, 0, 0.548);
+    color: rgb(243, 102, 102);
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    transition: 0.35s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      letter-spacing: 0.9px;
+    }
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .cart-body {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 1.6rem !important;
+    padding-left: 1rem !important;
+  }
+}
+@media screen and (max-width: 726px) {
+  .cart-body {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  h2 {
+    font-weight: 600;
+    font-size: 1.5rem !important;
+    padding-left: 0.2rem !important;
+  }
+}

@@ -1,0 +1,149 @@
+/** @format */
+
+.nav {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+  align-items: center;
+  backdrop-filter: blur(10px) !important;
+  position: fixed;
+  z-index: 99;
+  background-color: rgba(255, 255, 255, 0.342);
+  .logo-container {
+    height: 100%;
+    width: 60px;
+    padding: 0px 0 0 10px;
+
+    .logo {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .option {
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: "Poppins", sans-serif;
+      text-decoration: none;
+      color: #e54b35;
+      font-weight: 500;
+      font-size: 18px;
+      transition: all 300ms ease-in-out;
+      text-transform: uppercase;
+      opacity: 1;
+      &:hover {
+        color: #205432;
+      }
+    }
+    &:hover .option:not(:hover) {
+      opacity: 0.6;
+    }
+  }
+}
+.nav-mobile-icon {
+  display: none;
+}
+.badge {
+  display: none !important;
+}
+@media screen and (max-width: 1230px) {
+  .nav {
+    padding: 0 2%;
+    .options {
+      width: 70%;
+      .option {
+        padding: 8px 12px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 726px) {
+  .badge {
+    display: block !important;
+    position: absolute !important;
+    top: 32% !important;
+    right: 0.8rem;
+    z-index: 1000;
+
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  .nav {
+    padding: 0 2%;
+    width: 100%;
+    z-index: 200;
+    .options {
+      position: absolute;
+      z-index: 60;
+      top: 0;
+      right: -20rem;
+      width: 220px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      background-color: rgb(255, 255, 255);
+      transition: all 0.5s ease;
+      .option {
+        margin-right: 1rem;
+        color: rgb(0, 0, 0);
+        margin-top: 0.7rem;
+        padding: 8px 12px;
+        font-size: 20px;
+        &:hover {
+          letter-spacing: 1.5px;
+          color: rgb(224, 60, 60);
+        }
+      }
+    }
+    .option-active {
+      right: 0em;
+    }
+    .nav-mobile-icon {
+      display: block;
+      position: absolute;
+      right: 3%;
+      width: 25px;
+      z-index: 70;
+      height: 25px;
+      cursor: pointer;
+      span {
+        display: block;
+        width: 100%;
+        padding: 0.1rem 0;
+        height: 2px;
+        background-color: rgb(2, 2, 2);
+        margin: 0.2rem 0;
+        transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    }
+    .nav-mobile-active {
+      span:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 0.38rem;
+      }
+      span:nth-child(2) {
+        transform: rotate(-45deg);
+      }
+      span:nth-child(3) {
+        opacity: 0;
+      }
+    }
+  }
+}

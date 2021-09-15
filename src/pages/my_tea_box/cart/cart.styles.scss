@@ -1,0 +1,26 @@
+/** @format */
+
+.cart-container {
+  width: 100%;
+  height: auto;
+}
+.cart-contents {
+  padding: 0 2%;
+  height: 100%;
+  margin: 0 auto;
+  h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    margin: 0 !important;
+    padding-left: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-contents h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    margin: 0 !important;
+    padding-left: 2%;
+  }
+}

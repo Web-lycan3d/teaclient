@@ -1,0 +1,362 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+$breakpoint-mob: 766px;
+$breakpoint-tab: 1064;
+.landing-quote {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5% 10% 4%;
+
+  p,
+  span {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin: 0.5rem 0;
+  }
+}
+
+.freashest-tea-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 50%;
+  left: 5%;
+  top: 35%;
+  transform: translateY(-35%);
+  z-index: 20;
+
+  p,
+  h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 2.8rem;
+  }
+
+  p {
+    font-weight: 300;
+    width: 80%;
+    font-size: 1rem;
+    opacity: 0.75 !important;
+  }
+}
+
+.heading-text {
+  display: flex;
+  justify-content: center;
+  padding: 2% 0%;
+
+  h1,
+  p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    letter-spacing: 1.5px;
+    color: #3d7606;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.order-yours-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 10%;
+  z-index: 20;
+  p,
+  h1 {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: 700;
+  }
+
+  p {
+    text-align: center;
+    font-weight: 300 !important;
+  }
+}
+.home-body-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 20;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    height: 98%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.534) 30%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+}
+.margin-30 {
+  margin: 1% 30%;
+  display: flex;
+  justify-content: center;
+  .shop-now-btn {
+    width: 7rem;
+    padding: 0.4rem 0.5rem;
+    border: 2px solid rgb(3, 107, 3);
+    background: transparent;
+    color: rgb(3, 107, 3);
+    cursor: pointer;
+    transition: all 0.35s ease-in-out;
+    position: relative;
+    bottom: 2rem;
+    &:hover {
+      letter-spacing: 0.8px;
+    }
+  }
+}
+
+.collection-preview {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  padding: 2% 0% 5%;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 35%;
+  left: 5%;
+  top: 45%;
+
+  p,
+  h1 {
+    color: #fff;
+  }
+}
+.home-bottom-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 20;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    height: 98%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.815) 50%,
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+.image-content3 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  z-index: 210;
+
+  top: 32%;
+  transform: translateY(-35%);
+  color: white;
+  h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: #f3f3f3f5;
+    font-weight: 500 !important;
+  }
+  p {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    line-height: 1.5;
+    font-weight: 200;
+    opacity: 0.8;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .image-content3 {
+    h1 {
+      font-size: 2.1rem;
+    }
+    p {
+      width: 80%;
+      font-size: 0.95rem;
+    }
+  }
+}
+@media (max-width: $breakpoint-mob) {
+  .landing-quote {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5% 5% 4%;
+  }
+  .landing-quote p,
+  .landing-quote span {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    margin: 0.5rem 0;
+  }
+  .freashest-tea-content {
+    width: 80%;
+    left: 5%;
+    top: 38%;
+  }
+  .freashest-tea-content h1 {
+    font-size: 1.9rem;
+
+    line-height: 1.3;
+  }
+  .freashest-tea-content p {
+    width: 85%;
+    font-size: 0.75rem;
+    opacity: 0.8 !important;
+    font-weight: 300;
+  }
+
+  .heading-text h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #3d7606;
+    margin-top: 0;
+  }
+  .heading-text p {
+    font-size: 11px;
+    text-align: center;
+  }
+  .order-yours-content h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .collection-preview {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .collection-item {
+    width: 31%;
+    height: 100px;
+  }
+
+  .image-content3 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    color: white;
+    h1 {
+      font-size: 1.7rem;
+      line-height: 1.2;
+
+      padding: 0 0.3rem;
+    }
+    p {
+      width: 95%;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      padding: 0 0.4rem;
+    }
+  }
+  .margin-30 .shop-now-btn {
+    padding: 0.25rem 0.4rem;
+    margin-bottom: 1rem;
+    bottom: 0rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .freashest-tea-content {
+    top: 35%;
+  }
+  .freashest-tea-content h1 {
+    font-size: 1.6rem;
+
+    line-height: 1.3;
+  }
+  .freashest-tea-content p {
+    width: 100%;
+    font-size: 0.55rem;
+    opacity: 0.9 !important;
+    font-weight: 300;
+  }
+  .image-content3 {
+    z-index: 210;
+    top: 22%;
+    color: white;
+    h1 {
+      font-size: 1.45rem;
+      word-wrap: break-word;
+      line-height: 1.2;
+    }
+    p {
+      font-size: 0.65rem;
+    }
+  }
+  .heading-text h1 {
+    font-size: 1.3rem;
+  }
+  .crop-img {
+    height: 120px;
+  }
+  .crop-ptag {
+    width: 90%;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    position: relative;
+    bottom: 0.5rem;
+    padding-inline-end: 1rem;
+    padding-bottom: 1rem;
+  }
+  .collection-preview {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1060px) {
+  .landing-quote p,
+  .landing-quote span {
+    text-align: center;
+  }
+  .content {
+    width: 90%;
+    top: 55%;
+  }
+}
