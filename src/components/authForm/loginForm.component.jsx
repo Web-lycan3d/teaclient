@@ -144,9 +144,10 @@ const LoginForm = ({
             name="email"
             label="Email"
             type="email"
+            placeholder="Enter your email"
           />
           {errors?.email && (
-            <span className="error">{errors?.email?.message}</span>
+            <span className="error-1">{errors?.email?.message}</span>
           )}
           {userError && <span className="error">User doesn't exist</span>}
           <Input
@@ -154,9 +155,12 @@ const LoginForm = ({
             name="password"
             label="Password"
             type="password"
-          />
+            placeholder="Enter your password"
+            error={!!errors.password}
+            helperText={errors?.password?.message}
+          />{" "}
           {errors?.password && (
-            <span className="error">{errors?.password?.message}</span>
+            <span className="error-1">{errors?.password?.message}</span>
           )}
           {passwError && <span className="error">Wrong password</span>}
           <SubmitButton>LOGIN</SubmitButton>

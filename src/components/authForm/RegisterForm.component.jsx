@@ -69,7 +69,7 @@ const RegisterForm = ({ setAlert, registerUser }) => {
     mode: "onBlur",
     resolver: zodResolver(Schema),
   });
-  console.log(errors);
+
   const onSubmit = async (data) => {
     const { password, confirmPassword } = data;
     if (password !== confirmPassword) {
@@ -158,36 +158,46 @@ const RegisterForm = ({ setAlert, registerUser }) => {
               label="Username"
               className="mater-in"
               type="text"
+              placeholder="Username"
+              {...register("username")}
             />
             {errors?.username && (
-              <span className="error">{errors?.username?.message}</span>
+              <span className="error-1">{errors?.username?.message}</span>
             )}
             <Input
               {...register("email")}
               name="email"
               label="Email"
               type="email"
-            />
+              placeholder="Email"
+            />{" "}
             {errors?.email && (
-              <span className="error">{errors?.email?.message}</span>
+              <span className="error-1">{errors?.email?.message}</span>
+            )}
+            {emailErrorState && (
+              <span className="error">Email already exists?</span>
             )}
             <Input
               {...register("password")}
               name="password"
               label="Password"
               type="password"
+              placeholder="Password"
             />{" "}
             {errors?.password && (
-              <span className="error">{errors?.password?.message}</span>
+              <span className="error-1">{errors?.password?.message}</span>
             )}
             <Input
               {...register("confirmPassword")}
               name="confirmPassword"
               label="Confirm Password"
+              placeholder="Confirm Password"
               type="password"
             />{" "}
             {errors?.confirmPassword && (
-              <span className="error">{errors?.confirmPassword?.message}</span>
+              <span className="error-1">
+                {errors?.confirmPassword?.message}
+              </span>
             )}
             <SubmitButton>Register</SubmitButton>
             <GoogleLogin
