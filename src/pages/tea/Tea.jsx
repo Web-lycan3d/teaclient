@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import TeaContainer from "../../components/productsTea/TeaContainer";
 import { motion } from "framer-motion";
-import "./tea.styles.scss";
+import "./tea2.styles.scss";
 
 const Tea = () => {
   const [Width, setWidth] = useState(window.innerWidth);
