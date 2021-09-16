@@ -69,7 +69,7 @@ const RegisterForm = ({ setAlert, registerUser }) => {
     mode: "onBlur",
     resolver: zodResolver(Schema),
   });
-
+  console.log(errors);
   const onSubmit = async (data) => {
     const { password, confirmPassword } = data;
     if (password !== confirmPassword) {
@@ -158,36 +158,37 @@ const RegisterForm = ({ setAlert, registerUser }) => {
               label="Username"
               className="mater-in"
               type="text"
-              error={!!errors.username}
-              helperText={errors?.username?.message}
             />
+            {errors?.username && (
+              <span className="error">{errors?.username?.message}</span>
+            )}
             <Input
               {...register("email")}
               name="email"
               label="Email"
               type="email"
-              error={!!errors.email}
-              helperText={errors?.email?.message}
             />
-            {emailErrorState && (
-              <span className="error">Email already exists?</span>
+            {errors?.email && (
+              <span className="error">{errors?.email?.message}</span>
             )}
             <Input
               {...register("password")}
               name="password"
               label="Password"
               type="password"
-              error={!!errors.password}
-              helperText={errors?.password?.message}
-            />
+            />{" "}
+            {errors?.password && (
+              <span className="error">{errors?.password?.message}</span>
+            )}
             <Input
               {...register("confirmPassword")}
               name="confirmPassword"
               label="Confirm Password"
               type="password"
-              error={!!errors.confirmPassword}
-              helperText={errors?.confirmPassword?.message}
-            />
+            />{" "}
+            {errors?.confirmPassword && (
+              <span className="error">{errors?.confirmPassword?.message}</span>
+            )}
             <SubmitButton>Register</SubmitButton>
             <GoogleLogin
               clientId="1875614009-hrc1csc954jrjt2lsebdotnkp9ad7mol.apps.googleusercontent.com"

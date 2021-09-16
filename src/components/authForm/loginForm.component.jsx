@@ -144,18 +144,20 @@ const LoginForm = ({
             name="email"
             label="Email"
             type="email"
-            error={!!errors.email}
-            helperText={errors?.email?.message}
           />
+          {errors?.email && (
+            <span className="error">{errors?.email?.message}</span>
+          )}
           {userError && <span className="error">User doesn't exist</span>}
           <Input
             {...register("password")}
             name="password"
             label="Password"
             type="password"
-            error={!!errors.password}
-            helperText={errors?.password?.message}
           />
+          {errors?.password && (
+            <span className="error">{errors?.password?.message}</span>
+          )}
           {passwError && <span className="error">Wrong password</span>}
           <SubmitButton>LOGIN</SubmitButton>
           <GoogleLogin
