@@ -69,7 +69,7 @@ const RegisterForm = ({ setAlert, registerUser }) => {
     mode: "onBlur",
     resolver: zodResolver(Schema),
   });
-
+  console.log(errors);
   const onSubmit = async (data) => {
     const { password, confirmPassword } = data;
     if (password !== confirmPassword) {
