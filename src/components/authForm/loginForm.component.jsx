@@ -143,7 +143,6 @@ const LoginForm = ({
             {...register("email")}
             name="email"
             label="Email"
-            type="email"
             placeholder="Enter your email"
           />
           {errors?.email && (
@@ -154,7 +153,6 @@ const LoginForm = ({
             {...register("password")}
             name="password"
             label="Password"
-            type="password"
             placeholder="Enter your password"
             error={!!errors.password}
             helperText={errors?.password?.message}
