@@ -4,7 +4,9 @@ import React, { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
 import * as yup from "yup";
+import * as zod from "zod";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { connect, useDispatch } from "react-redux";
 import PropTypes from "prop-types";
@@ -20,27 +22,28 @@ import apiUrl from "../../apiUrl/api";
 import GoogleLogin from "react-google-login";
 import { FcGoogle } from "react-icons/fc";
 
-const Schema = yup.object().shape({
-  username: yup
+const Schema = zod.object({
+  username: zod
     .string()
-    .required("name is required")
-    .min(4, "Minimun of 4 letters is required")
-    .matches(/^([^0-9]*)$/, "Name should not contain numbers"),
-  email: yup
+    .nonempty({ message: "Name is required" })
+    .min(4, { message: "Minimun of 4 letters is required" })
+    .regex(/^([^0-9]*)$/, { message: "Name should not contain numbers" }),
+
+  email: zod
     .string()
-    .required("email is required")
-    .email("Entered email should have correct format"),
-  password: yup
+    .nonempty({ message: "Email is required" })
+    .email({ message: "Entered email should have correct format" }),
+  password: zod
     .string()
-    .required("password is required")
-    .matches(
+    .nonempty({ message: "Password is required" })
+    .regex(
       /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/,
       "Include @, Caps, digit & at least 8 characters"
     ),
-  confirmPassword: yup
+  confirmPassword: zod
     .string()
-    .required("password is required")
-    .matches(
+    .nonempty({ message: "password is required" })
+    .regex(
       /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/,
       "Include @, Caps, digit & at least 8 characters"
     ),
@@ -64,7 +67,7 @@ const RegisterForm = ({ setAlert, registerUser }) => {
     formState: { errors },
   } = useForm({
     mode: "onBlur",
-    resolver: yupResolver(Schema),
+    resolver: zodResolver(Schema),
   });
 
   const onSubmit = async (data) => {

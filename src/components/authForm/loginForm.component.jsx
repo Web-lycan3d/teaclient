@@ -5,7 +5,10 @@ import { useForm } from "react-hook-form";
 import { Link, Redirect } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
 import * as yup from "yup";
+import * as zod from "zod";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import { motion } from "framer-motion";
 import GoogleLogin from "react-google-login";
 import PropTypes from "prop-types";
@@ -23,12 +26,12 @@ import apiUrl from "../../apiUrl/api";
 import axios from "axios";
 import { FcGoogle } from "react-icons/fc";
 
-const Schema = yup.object().shape({
-  email: yup
+const Schema = zod.object({
+  email: zod
     .string()
-    .email("Email should have correct format")
-    .required("Email is required"),
-  password: yup.string().required("Password is required"),
+    .email({ message: "Email should have correct format" })
+    .nonempty({ message: "Email is required" }),
+  password: zod.string().nonempty({ message: "Password is required" }),
 });
 const backendUrl = apiUrl();
 
@@ -49,7 +52,7 @@ const LoginForm = ({
     formState: { errors },
   } = useForm({
     mode: "onBlur",
-    resolver: yupResolver(Schema),
+    resolver: zodResolver(Schema),
   });
 
   const onSubmit = async (data) => {
