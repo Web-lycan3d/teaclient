@@ -23,23 +23,23 @@ import { FcGoogle } from "react-icons/fc";
 const Schema = yup.object().shape({
   username: yup
     .string()
-    .required("Name is required")
+    .required("name is required")
     .min(4, "Minimun of 4 letters is required")
     .matches(/^([^0-9]*)$/, "Name should not contain numbers"),
   email: yup
     .string()
-    .required("Email is required")
+    .required("email is required")
     .email("Entered email should have correct format"),
   password: yup
     .string()
-    .required("Password is required")
+    .required("password is required")
     .matches(
       /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/,
       "Include @, Caps, digit & at least 8 characters"
     ),
   confirmPassword: yup
     .string()
-    .required("Password is required")
+    .required("password is required")
     .matches(
       /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/,
       "Include @, Caps, digit & at least 8 characters"
