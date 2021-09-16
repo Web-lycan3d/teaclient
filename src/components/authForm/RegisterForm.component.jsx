@@ -152,10 +152,10 @@ const RegisterForm = ({ setAlert, registerUser }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7 }}>
           <Form onSubmit={handleSubmit(onSubmit)}>
-            <Input
+            <input
               {...register("username")}
-              label="Username"
-              className="mater-in"
+              label="Username "
+              className="mater-in user-inputs"
               type="text"
               placeholder="Username"
             />
