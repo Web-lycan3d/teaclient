@@ -162,10 +162,11 @@ const RegisterForm = ({ setAlert, registerUser }) => {
             {errors?.username && (
               <span className="error-1">{errors?.username?.message}</span>
             )}
-            <Input
+            <input
               {...register("email")}
               label="Email"
               type="email"
+              className="user-inputs"
               placeholder="Email"
             />{" "}
             {errors?.email && (
@@ -174,18 +175,20 @@ const RegisterForm = ({ setAlert, registerUser }) => {
             {emailErrorState && (
               <span className="error">Email already exists?</span>
             )}
-            <Input
+            <input
               {...register("password")}
               label="Password"
               type="password"
+              className="user-inputs"
               placeholder="Password"
             />{" "}
             {errors?.password && (
               <span className="error-1">{errors?.password?.message}</span>
             )}
-            <Input
+            <input
               {...register("confirmPassword")}
               label="Confirm Password"
+              className="user-inputs"
               placeholder="Confirm Password"
               type="password"
             />{" "}

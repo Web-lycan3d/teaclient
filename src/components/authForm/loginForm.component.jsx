@@ -139,23 +139,25 @@ const LoginForm = ({
         exit={{ opacity: 0 }}
         transition={{ duration: 0.7 }}>
         <Form onSubmit={handleSubmit(onSubmit)}>
-          <Input
+          <input
             {...register("email")}
             name="email"
             label="Email"
+            className="user-inputs"
             placeholder="Enter your email"
+            type="email"
           />
           {errors?.email && (
             <span className="error-1">{errors?.email?.message}</span>
           )}
           {userError && <span className="error">User doesn't exist</span>}
-          <Input
+          <input
             {...register("password")}
             name="password"
             label="Password"
+            className="user-inputs"
             placeholder="Enter your password"
-            error={!!errors.password}
-            helperText={errors?.password?.message}
+            type="password"
           />{" "}
           {errors?.password && (
             <span className="error-1">{errors?.password?.message}</span>
