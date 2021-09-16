@@ -154,19 +154,18 @@ const RegisterForm = ({ setAlert, registerUser }) => {
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Input
               {...register("username")}
-              name="username"
               label="Username"
               className="mater-in"
+              type="text"
               placeholder="Username"
-              {...register("username")}
             />
             {errors?.username && (
               <span className="error-1">{errors?.username?.message}</span>
             )}
             <Input
               {...register("email")}
-              name="email"
               label="Email"
+              type="email"
               placeholder="Email"
             />{" "}
             {errors?.email && (
@@ -177,8 +176,8 @@ const RegisterForm = ({ setAlert, registerUser }) => {
             )}
             <Input
               {...register("password")}
-              name="password"
               label="Password"
+              type="password"
               placeholder="Password"
             />{" "}
             {errors?.password && (
@@ -186,9 +185,9 @@ const RegisterForm = ({ setAlert, registerUser }) => {
             )}
             <Input
               {...register("confirmPassword")}
-              name="confirmPassword"
               label="Confirm Password"
               placeholder="Confirm Password"
+              type="password"
             />{" "}
             {errors?.confirmPassword && (
               <span className="error-1">
